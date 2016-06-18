@@ -263,7 +263,7 @@
         <div class="first">
 
             <img src="/img/logo.png" alt="Site Logo" class="vertical">
-            <p>Играй с друзьями и зарабатывай!</p>
+            <p>Играй с друзьями и зарабатывай</p>
 
         </div>
 
