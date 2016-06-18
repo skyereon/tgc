@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="783846c7-8ac2-41de-a380-1af9a61917df" name="TGC" url="http://188.225.38.173">
+        <fileTransfer host="188.225.38.173" port="22" rootFolder="/var/www/thegameclub" accessType="SFTP" password="dfd8dfcfdfdddfc2dfcddfccdf99df93df9cdfc4dfc8dfcedfd9df9bdf98dfdddfdb" username="root">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

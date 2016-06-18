@@ -1,0 +1,148 @@
+
+@section('content')
+
+@endsection
+
+@section('margin-left')
+    <li id="magic-line" style="left: 100px;"><div class="triangle"></div></li>
+@endsection
+
+@section('cs')
+    class="current_page_item"
+@endsection
+
+@section('dota')
+class=""
+@endsection
+
+@section('lol')
+    class=""
+@endsection
+
+@section('heartstone')
+    class=""
+@endsection
+
+@section('in_process')
+
+@endsection
+
+<!DOCTYPE html>
+    <html lang="en" class="">
+    <head>
+        <meta charset="utf-8">
+        <link rel="icon" href="/i/favicon.png">
+
+        <title>The Game Club</title>
+
+        <link rel="stylesheet" type="text/css" media="screen, print, projection" href="/css/csgo.css">
+
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    </head>
+    <body>
+
+    <div id="page-homepage">
+
+
+        <div class="navbar-wrapper">
+
+            <div class="navbar-collapse collapse">
+
+                <div class="logo-wrapper">
+                    <img src="/i/logo.png" id="v7-logo" class="vertical">
+                </div>
+
+                <ul id="main-nav">
+
+                    <li @yield('home')>
+                        <a href="/./" class="mobile-vertical">Intro</a>
+                    </li>
+
+                    <li @yield('cs')>
+                        <a href="/csgo" class="mobile-vertical">CS:GO</a>
+                    </li>
+
+                    <li @yield('dota')>
+                        <a href="/dota" class="mobile-vertical">Dota 2</a>
+                    </li>
+
+                    <li @yield('lol')>
+                        <a href="/lol" class="mobile-vertical">LOL</a>
+                    </li>
+
+
+
+
+                    <li @yield('heartstone')><a href="/heartstone" class="mobile-vertical">Hearthstone</a></li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <main>
+
+            <div class="first">
+
+                {{--<img src="/i/logo.png" alt="Site Logo" class="vertical">--}}
+
+            </div>
+
+            <div class="wrapper">
+                <div class="current-game">CS:GO</div>
+                @yield('in_process')
+            </div>
+
+            <div id="particles" style="display: block;"><canvas class="pg-canvas" width="260" height="643"></canvas></div>
+
+        </main>
+
+        <table class="test" width="100%">
+            <tbody>
+
+            </tbody>
+        </table>
+
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+
+    <script type="text/javascript" src="/js/jquery.particleground.js"></script>
+    <script type="text/javascript" src="/js/magicline.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            $('#particles').particleground({
+                dotColor: '#ff6969',
+                lineColor: 'rgba(255,255,255,0.05)',
+                particleRadius: 3,
+                parallax: false,
+                onInit: function() {
+                    $( "#particles" ).delay(1000).fadeIn( "slow");
+                }
+            });
+        });
+    </script>
+    <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-24588139-1', 'auto');
+        ga('require', 'displayfeatures');
+        ga('send', 'pageview');
+    </script>
+    Start of Async HubSpot Analytics Code
+    <script type="text/javascript">
+        (function(d,s,i,r) {
+            if (d.getElementById(i)){return;}
+            var n=d.createElement(s),e=d.getElementsByTagName(s)[0];
+            n.id=i;n.src='//js.hs-analytics.net/analytics/'+(Math.ceil(new Date()/r)*r)+'/503322.js';
+            e.parentNode.insertBefore(n, e);
+        })(document,"script","hs-analytics",300000);
+    </script>
+
+    </body>
+    </html>
