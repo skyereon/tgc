@@ -129,7 +129,7 @@
 
 
 
-{{--<li @yield('heartstone')><a href="/heartstone" class="mobile-vertical">Heartstone</a></li>--}}
+{{--<li @yield('hearthstone')><a href="/hearthstone" class="mobile-vertical">Heartstone</a></li>--}}
 
 
 {{--</ul>--}}
@@ -245,7 +245,7 @@
                 </li>
 
                 <li class="">
-                    <a href="/heartstone" class="mobile-vertical">Hearthstone</a>
+                    <a href="/hearthstone" class="mobile-vertical">Hearthstone</a>
                 </li>
 
                 <li id="magic-line" style="left: 0px;">
@@ -259,11 +259,21 @@
     </div>
 
     <main>
+        {{--<div class="game-login">--}}
+            {{--@if(Auth::check())--}}
+                {{--<img src="{{ Auth::user()->avatar }}">--}}
+                {{--<p>{{ Auth::user()->username }}</p>--}}
+                {{--<p>{{ Auth::user()->steamid }}</p>--}}
+                {{--<p><a href="logout"> LOGOUT</a></p>--}}
+            {{--@else--}}
+                {{--<p><a href="steamlogin">Login into Steam</a></p>--}}
+            {{--@endif--}}
+        {{--</div>--}}
 
         <div class="first">
 
             <img src="/img/logo.png" alt="Site Logo" class="vertical">
-            <p>Играй с друзьями и зарабатывай!</p>
+            <p>Играй с друзьями и зарабатывай</p>
 
         </div>
 

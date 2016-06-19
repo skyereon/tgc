@@ -3,11 +3,46 @@
 
 @endsection
 
+@section('auth-steam')
+    <div class="game-login">
+
+        @if(Auth::check())
+            <a href="csgo/profile"><img src="{{ Auth::user()->avatar }}"></a>
+            <p>Вы вошли как:<br/>
+                <a class="profile" href="csgo/profile"> {{ Auth::user()->username }} </a></p>
+            {{--<h4>{{ Auth::user()->username }}</h4>--}}
+            {{--<h3>{{ Auth::user()->steamid }}</h3>--}}
+            <p><a class="btn btn-default" href="csgologout" role="button">Выйти</a></p>
+        @else
+            <a href="csgosteamlogin"><img src="img/csgo/steam-signin-color.png" alt="Зайти через стим!"></a>
+        @endif
+    </div>
+@endsection
+
+@section('game-select')
+    <div class="menu">
+        <div class="wrap-drop" id="noble-gases">
+            <span>СS:GO</span>
+            <ul class="drop">
+                {{--<li class="selected"><a>CS:GO</a></li>--}}
+                <li><a href="/dota">Dota 2</a></li>
+                <li><a href="/lol">LoL</a></li>
+                <li><a href="/hearthstone">Hearthstone</a></li>
+            </ul>
+        </div>
+    </div>
+    <script type="text/javascript" src="/js/menu.js"></script>
+@endsection
+
 @section('margin-left')
     <li id="magic-line" style="left: 100px;"><div class="triangle"></div></li>
 @endsection
 
 @section('cs')
+    class=""
+@endsection
+
+@section('home')
     class="current_page_item"
 @endsection
 
@@ -19,7 +54,7 @@ class=""
     class=""
 @endsection
 
-@section('heartstone')
+@section('hearthstone')
     class=""
 @endsection
 
@@ -34,19 +69,24 @@ class=""
         <link rel="icon" href="/i/favicon.png">
 
         <title>The Game Club</title>
-
+        <link rel="stylesheet" type="text/css"  href="/bootstrap-3.3.6-dist/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" media="screen, print, projection" href="/css/csgo.css">
-
-
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <script type="text/javascript" src="/js/jquery-3.0.0.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     </head>
     <body>
 
+
+
     <div id="page-homepage">
 
 
+
         <div class="navbar-wrapper">
+
+            @yield('game-select')
 
             <div class="navbar-collapse collapse">
 
@@ -55,37 +95,42 @@ class=""
                 </div>
 
                 <ul id="main-nav">
-
                     <li @yield('home')>
-                        <a href="/./" class="mobile-vertical">Intro</a>
+                        <a href="@yield('play');" class="mobile-vertical">Играть</a>
                     </li>
 
                     <li @yield('cs')>
-                        <a href="/csgo" class="mobile-vertical">CS:GO</a>
+                        <a href="@yield('tournaments');" class="mobile-vertical">Турниры</a>
                     </li>
 
                     <li @yield('dota')>
-                        <a href="/dota" class="mobile-vertical">Dota 2</a>
+                        <a href="@yield('complaints');" class="mobile-vertical">Жалобы</a>
                     </li>
 
                     <li @yield('lol')>
-                        <a href="/lol" class="mobile-vertical">LOL</a>
+                        <a href="@yield('faq');" class="mobile-vertical">FAQ</a>
                     </li>
 
-
-
-
-                    <li @yield('heartstone')><a href="/heartstone" class="mobile-vertical">Hearthstone</a></li>
                 </ul>
 
             </div>
+            {{--<div class="game-login">--}}
+                {{--@if(Auth::check())--}}
+                    {{--<img src="{{ Auth::user()->avatar }}">--}}
+                    {{--<p>{{ Auth::user()->username }}</p>--}}
+                    {{--<p>{{ Auth::user()->steamid }}</p>--}}
+                    {{--<p><a href="csgologout">LOGOUT</a></p>--}}
+                {{--@else--}}
+                    {{--<p><a href="steamlogin">Login into Steam</a></p>--}}
+                {{--@endif--}}
+            {{--</div>--}}
+            @yield('auth-steam');
 
         </div>
 
         <main>
 
             <div class="first">
-
                 {{--<img src="/i/logo.png" alt="Site Logo" class="vertical">--}}
 
             </div>
