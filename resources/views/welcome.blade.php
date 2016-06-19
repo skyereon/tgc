@@ -264,7 +264,7 @@
                 <img src="{{ Auth::user()->avatar }}">
                 <p>{{ Auth::user()->username }}</p>
                 <p>{{ Auth::user()->steamid }}</p>
-                <p><a href="logout">LOGOUT</a></p>
+                <p><a href="logout"> LOGOUT</a></p>
             @else
                 <p><a href="steamlogin">Login into Steam</a></p>
             @endif

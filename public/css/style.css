@@ -16,7 +16,7 @@ body {
 
 .game-login {
     position: absolute;
-    top: 700px;
+    top: 400px;
     left:40px;
     z-index: 15;
     background-color: #f6fffa;
