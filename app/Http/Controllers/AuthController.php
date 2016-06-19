@@ -30,6 +30,7 @@ class AuthController extends Controller
                         'avatar'   => $info->getProfilePictureFull(),
                         'steamid'  => $info->getSteamID64()
                     ]);
+
                 }
                 Auth::login($user, true);
                 return redirect('/'); // redirect to site

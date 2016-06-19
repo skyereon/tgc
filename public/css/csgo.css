@@ -32,6 +32,14 @@ canvas {
     font-size: 60px;
 }
 
+.game-login {
+    position: absolute;
+    top: 30px;
+    left:40px;
+    z-index: 12;
+    background-color: #f6fffa;
+}
+
 .coming-soon {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: white;
