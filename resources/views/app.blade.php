@@ -129,7 +129,7 @@
 
 
 
-                {{--<li @yield('heartstone')><a href="/heartstone" class="mobile-vertical">Heartstone</a></li>--}}
+                {{--<li @yield('hearthstone')><a href="/hearthstone" class="mobile-vertical">Heartstone</a></li>--}}
 
 
             {{--</ul>--}}
@@ -242,6 +242,8 @@
                 <li @yield('lol')>
                     <a href="@yield('faq');" class="mobile-vertical">FAQ</a>
                 </li>
+
+               @yield('margin-left')
 
             </ul>
 

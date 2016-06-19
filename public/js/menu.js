@@ -15,9 +15,24 @@ DropDown.prototype = {
             e.preventDefault();
             e.stopPropagation();
             $(this).toggleClass('active');
+
         });
         obj.opts.on('click', function () {
             var opt = $(this);
+            // alert(opt.text());
+
+            if (opt.text() == 'Dota 2'){
+                document.location.href = "http://www.thegameclub.club/dota";
+            }
+            else if (opt.text() == 'LoL'){
+                document.location.href = "http://www.thegameclub.club/lol";
+            }
+            else if (opt.text() == 'Hearthstone'){
+                document.location.href = "http://www.thegameclub.club/hearthstone";
+            }
+            else if (opt.text() == 'csgo'){
+                document.location.href = "http://www.thegameclub.club/csgo";
+            }
             obj.val = opt.text();
             obj.index = opt.index();
             obj.placeholder.text(obj.val);

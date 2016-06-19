@@ -6,10 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class HeartstoneController extends Controller
+class HearthstoneController extends Controller
 {
     public function index()
     {
-        return view('heartstone.index');
+        return view('hearthstone.index');
     }
 }

@@ -5,7 +5,7 @@
 @endsection
 
 @section('margin-left')
-    <li id="magic-line" style="left: 400px;"><div class="triangle"></div></li>
+    <li id="magic-line" style="left: 0px;"><div class="triangle"></div></li>
 @endsection
 
 @section('cs')
@@ -20,8 +20,12 @@
     class=""
 @endsection
 
-@section('heartstone')
+@section('home')
     class="current_page_item"
+@endsection
+
+@section('hearthstone')
+    class=""
 @endsection
 
 @section('in_process')

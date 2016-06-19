@@ -23,9 +23,9 @@
             <span>СS:GO</span>
             <ul class="drop">
                 {{--<li class="selected"><a>CS:GO</a></li>--}}
-                <li><a>Dota 2</a></li>
-                <li><a>LoL</a></li>
-                <li><a>Hearthstone</a></li>
+                <li><a href="/dota">Dota 2</a></li>
+                <li><a href="/lol">LoL</a></li>
+                <li><a href="/hearthstone">Hearthstone</a></li>
             </ul>
         </div>
     </div>
@@ -37,6 +37,10 @@
 @endsection
 
 @section('cs')
+    class=""
+@endsection
+
+@section('home')
     class="current_page_item"
 @endsection
 
@@ -48,7 +52,7 @@ class=""
     class=""
 @endsection
 
-@section('heartstone')
+@section('hearthstone')
     class=""
 @endsection
 

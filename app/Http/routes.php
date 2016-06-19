@@ -26,7 +26,7 @@ Route::get('/dota', ['as' => 'dota', 'uses' => 'DotaController@index']);
 
 Route::get('/lol', ['as' => 'lol', 'uses' => 'LolController@index']);
 
-Route::get('/heartstone', ['as' => 'heartstone', 'uses' => 'HeartstoneController@index']);
+Route::get('/hearthstone', ['as' => 'hearthstone', 'uses' => 'HearthstoneController@index']);
 
 Route::get('steamlogin', 'AuthController@login');
 

@@ -129,7 +129,7 @@
 
 
 
-{{--<li @yield('heartstone')><a href="/heartstone" class="mobile-vertical">Heartstone</a></li>--}}
+{{--<li @yield('hearthstone')><a href="/hearthstone" class="mobile-vertical">Heartstone</a></li>--}}
 
 
 {{--</ul>--}}
@@ -245,7 +245,7 @@
                 </li>
 
                 <li class="">
-                    <a href="/heartstone" class="mobile-vertical">Hearthstone</a>
+                    <a href="/hearthstone" class="mobile-vertical">Hearthstone</a>
                 </li>
 
                 <li id="magic-line" style="left: 0px;">
