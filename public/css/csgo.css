@@ -33,6 +33,7 @@ body {
 }
 
 .wrap-drop {
+
     position: relative;
     z-index: 13;
     border-radius: 0px 0px 0px 0px;
@@ -43,9 +44,14 @@ body {
     cursor:pointer;
     min-width: 150px;
     max-width:225px;
+    text-align: left;
     padding:1rem;
     width:75%;
     border-radius: 5px!important;
+}
+
+.wrap-drop img{
+    margin-right: 5px;
 }
 
 .wrap-drop::after {
@@ -62,12 +68,16 @@ body {
     width:0;
 }
 
+.wrap-drop .drop img{
+    margin-right: 5px;
+}
 
 .wrap-drop .drop {
     background: rgba(76, 76, 76, 0.55);
     border-radius: 5px 5px 10px 10px;
     box-shadow:3px 3px 3px rgba(0,0,0,.2);
-    display:none;
+    display:inline-block;
+    text-align: left;
     left:0;
     list-style:none;
     margin-top:0;

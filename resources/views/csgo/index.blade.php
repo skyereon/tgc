@@ -22,12 +22,12 @@
 @section('game-select')
     <div class="menu">
         <div class="wrap-drop" id="noble-gases">
-            <span>СS:GO</span>
+            <span><img src="img/gamebar/cs-go.png">СS:GO</span>
             <ul class="drop">
                 {{--<li class="selected"><a>CS:GO</a></li>--}}
-                <li><a href="/dota">Dota 2</a></li>
-                <li><a href="/lol">LoL</a></li>
-                <li><a href="/hearthstone">Hearthstone</a></li>
+                <li><a hrsef="/dota"><img src="img/gamebar/dota.png">Dota2</a></li>
+                <li><a href="/lol"><img src="img/gamebar/lol.png">LoL</a></li>
+                <li><a href="/hearthstone"><img src="img/gamebar/ico_hs_small.png">Hearthstone</a></li>
             </ul>
         </div>
     </div>
