@@ -3,6 +3,20 @@
 
 @endsection
 
+@section('auth-steam')
+    <div class="game-login">
+
+        @if(Auth::check())
+            <img src="{{ Auth::user()->avatar }}">
+            <p>{{ Auth::user()->username }}</p>
+            <p>{{ Auth::user()->steamid }}</p>
+            <p><a href="csgologout">LOGOUT</a></p>
+        @else
+            <a href="csgosteamlogin"><img src="img/csgo/steam-signin-color.png" alt="Зайти через стим!"></a>
+        @endif
+    </div>
+@endsection
+
 @section('margin-left')
     <li id="magic-line" style="left: 100px;"><div class="triangle"></div></li>
 @endsection
@@ -36,12 +50,15 @@ class=""
         <title>The Game Club</title>
 
         <link rel="stylesheet" type="text/css" media="screen, print, projection" href="/css/csgo.css">
-
-
+        <link rel="stylesheet" type="text/css" href="/css/css-menu.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     </head>
     <body>
+
+
 
     <div id="page-homepage">
 
@@ -55,37 +72,42 @@ class=""
                 </div>
 
                 <ul id="main-nav">
-
                     <li @yield('home')>
-                        <a href="/./" class="mobile-vertical">Intro</a>
+                        <a href="@yield('play');" class="mobile-vertical">Играть</a>
                     </li>
 
                     <li @yield('cs')>
-                        <a href="/csgo" class="mobile-vertical">CS:GO</a>
+                        <a href="@yield('tournaments');" class="mobile-vertical">Турниры</a>
                     </li>
 
                     <li @yield('dota')>
-                        <a href="/dota" class="mobile-vertical">Dota 2</a>
+                        <a href="@yield('complaints');" class="mobile-vertical">Жалобы</a>
                     </li>
 
                     <li @yield('lol')>
-                        <a href="/lol" class="mobile-vertical">LOL</a>
+                        <a href="@yield('faq');" class="mobile-vertical">FAQ</a>
                     </li>
 
-
-
-
-                    <li @yield('heartstone')><a href="/heartstone" class="mobile-vertical">Hearthstone</a></li>
                 </ul>
 
             </div>
+            {{--<div class="game-login">--}}
+                {{--@if(Auth::check())--}}
+                    {{--<img src="{{ Auth::user()->avatar }}">--}}
+                    {{--<p>{{ Auth::user()->username }}</p>--}}
+                    {{--<p>{{ Auth::user()->steamid }}</p>--}}
+                    {{--<p><a href="csgologout">LOGOUT</a></p>--}}
+                {{--@else--}}
+                    {{--<p><a href="steamlogin">Login into Steam</a></p>--}}
+                {{--@endif--}}
+            {{--</div>--}}
+            @yield('auth-steam');
 
         </div>
 
         <main>
 
             <div class="first">
-
                 {{--<img src="/i/logo.png" alt="Site Logo" class="vertical">--}}
 
             </div>

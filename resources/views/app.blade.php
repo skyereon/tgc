@@ -227,27 +227,22 @@
             </div>
 
             <ul id="main-nav">
-
                 <li @yield('home')>
-                    <a href="/./" class="mobile-vertical">Intro</a>
+                    <a href="@yield('play');" class="mobile-vertical">Играть</a>
                 </li>
 
                 <li @yield('cs')>
-                    <a href="/csgo" class="mobile-vertical">CS:GO</a>
+                    <a href="@yield('tournaments');" class="mobile-vertical">Турниры</a>
                 </li>
 
                 <li @yield('dota')>
-                    <a href="/dota" class="mobile-vertical">Dota 2</a>
+                    <a href="@yield('complaints');" class="mobile-vertical">Жалобы</a>
                 </li>
 
                 <li @yield('lol')>
-                    <a href="/lol" class="mobile-vertical">LOL</a>
+                    <a href="@yield('faq');" class="mobile-vertical">FAQ</a>
                 </li>
 
-
-
-
-                <li @yield('heartstone')><a href="/heartstone" class="mobile-vertical">Hearthstone</a></li>
             </ul>
 
         </div>

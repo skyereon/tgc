@@ -32,6 +32,29 @@ canvas {
     font-size: 60px;
 }
 
+.game-login {
+    color: rgba(255, 255, 255, 1);
+    padding: 6px 5px 7px 8px;
+    position: absolute;
+    top: 0px;
+    right:0px;
+    z-index: 14;
+    border-radius: 0px 0px 0px 10px;
+    background-color: rgba(76, 76, 76, 0.55);
+    border: 1px solid #343434;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.game-login .profile{
+    color: #2aabd2;
+}
+
+.game-login img{
+    height: 40px;
+    width: auto;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
 .coming-soon {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: white;
@@ -82,7 +105,7 @@ a:focus {
 */
 
 body {
-    background-image: url('/i/background-texture.png');
+    /*background-image: url('/i/background-texture.png');*/
     background-position: center top;
     background: #171c1f;
     overflow-x: hidden;
@@ -286,7 +309,7 @@ li {
     height: 100%;
     overflow: hidden;
     /*background: #181e20;*/
-    background-image: url("/img/wellcome/bk.png");
+    background-image: url("/img/csgo/bg.png");
     display: none;
     background-position: 60% 35%;
     background-repeat: no-repeat;
