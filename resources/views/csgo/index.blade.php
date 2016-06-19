@@ -114,16 +114,6 @@ class=""
                 </ul>
 
             </div>
-            {{--<div class="game-login">--}}
-                {{--@if(Auth::check())--}}
-                    {{--<img src="{{ Auth::user()->avatar }}">--}}
-                    {{--<p>{{ Auth::user()->username }}</p>--}}
-                    {{--<p>{{ Auth::user()->steamid }}</p>--}}
-                    {{--<p><a href="csgologout">LOGOUT</a></p>--}}
-                {{--@else--}}
-                    {{--<p><a href="steamlogin">Login into Steam</a></p>--}}
-                {{--@endif--}}
-            {{--</div>--}}
             @yield('auth-steam');
 
         </div>
@@ -131,7 +121,6 @@ class=""
         <main>
 
             <div class="first">
-                {{--<img src="/i/logo.png" alt="Site Logo" class="vertical">--}}
 
             </div>
 
@@ -160,7 +149,7 @@ class=""
     <script>
         $(document).ready(function() {
             $('#particles').particleground({
-                dotColor: '#ff6969',
+                dotColor: '#2B99BB',
                 lineColor: 'rgba(255,255,255,0.05)',
                 particleRadius: 3,
                 parallax: false,
