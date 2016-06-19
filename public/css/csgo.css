@@ -16,6 +16,108 @@ body {
     width: 20%;
 }
 
+
+/* Game select menu */
+.menu {
+    color: rgba(255, 255, 255, 1);
+    padding: 7px 7px 7px 8px;
+    position: absolute;
+    top: 0px;
+    left:0px;
+    z-index: 14;
+    border-radius: 0px 0px 10px 0px;
+    background-color: rgba(76, 76, 76, 0.55);
+    border: 1px solid #343434;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    max-width:225px;
+}
+
+.wrap-drop {
+    position: relative;
+    z-index: 13;
+    border-radius: 0px 0px 0px 0px;
+    /*    background-color: rgba(76, 76, 76, 0.55);*/
+    background-color: rgba(16,143,153, 0.55);
+    border: 1px solid #343434;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    cursor:pointer;
+    min-width: 150px;
+    max-width:225px;
+    padding:1rem;
+    width:75%;
+    border-radius: 5px!important;
+}
+
+.wrap-drop::after {
+    border-color: white transparent;
+    border-style: solid;
+    border-width:10px 10px 0;
+    border-radius: 0px 0px 0px 0px;
+    content:"";
+    height:0;
+    margin-top:-4px;
+    position:absolute;
+    right:1rem;
+    top:50%;
+    width:0;
+}
+
+
+.wrap-drop .drop {
+    background: rgba(76, 76, 76, 0.55);
+    border-radius: 5px 5px 10px 10px;
+    box-shadow:3px 3px 3px rgba(0,0,0,.2);
+    display:none;
+    left:0;
+    list-style:none;
+    margin-top:0;
+    opacity:0;
+    padding-left:0;
+    pointer-events:none;
+    position:absolute;
+    right:0;
+    top:100%;
+    z-index: 14;
+}
+
+.wrap-drop .drop li a:hover {
+
+    border-radius: 5px 5px 10px 10px;
+
+}
+
+
+.wrap-drop .drop li a {
+    color: rgb(255,255,255);
+    display:block;
+    padding:1rem;
+    text-decoration:none;
+}
+
+.wrap-drop span {
+    color: rgb(255,255,255);
+}
+
+.wrap-drop .drop li:hover a {
+
+    background-color: rgba(204, 208, 211, 0.4);
+    color: white;
+}
+
+.wrap-drop.active::after {
+    border-width:0 10px 10px;
+}
+
+.wrap-drop.active .drop {
+    display:block;
+    opacity:1;
+    pointer-events:auto;
+}
+
+/* Endsection */
+
+
+
 /*.description {*/
 /*padding-top:10px;*/
 /*font-size: 16px;*/
@@ -46,7 +148,7 @@ canvas {
 }
 
 .game-login .profile{
-    color: #2aabd2;
+    color: #2B99BB;
 }
 
 .game-login img{
@@ -150,7 +252,7 @@ button,
     font-weight: bold;
     letter-spacing: 0.1em;
     font-size: 12px;
-    border: 2px solid #fe6a6a;
+    border: 2px solid #2B99BB;
     color: #ffffff;
     padding: 2em 3em;
     line-height: 1em;
@@ -159,7 +261,7 @@ button,
 
 button:hover,
 .button:hover {
-    background: #fe6a6a;
+    background: #2B99BB;
     color: #ffffff;
     text-decoration: none;
 }
@@ -273,7 +375,7 @@ li {
     bottom: 0px;
     left: 0;
     width: 60px;
-    border-bottom: 1px solid #fe6a6a;
+    border-bottom: 1px solid #2B99BB;
     line-height: 0;
     margin-left: 20px;
 }
@@ -281,7 +383,7 @@ li {
 #main-nav #magic-line .triangle {
     display: inline-block;
     border: 4px solid transparent;
-    border-bottom-color: #fe6a6a;
+    border-bottom-color: #2B99BB;
     position: relative;
     bottom: 5px;
 }
