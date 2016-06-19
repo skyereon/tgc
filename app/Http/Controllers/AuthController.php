@@ -18,7 +18,7 @@ class AuthController extends Controller
         $this->steam = $steam;
     }
 
-    public function login()
+    public function logincsgo()
     {
         if ($this->steam->validate()) {
             $info = $this->steam->getUserInfo();
@@ -33,9 +33,15 @@ class AuthController extends Controller
 
                 }
                 Auth::login($user, true);
-                return redirect('/'); // redirect to site
+                return redirect('/csgo'); // redirect to site
             }
         }
         return $this->steam->redirect(); // redirect to Steam login page
+    }
+
+    public function logoutcsgo()
+    {
+        Auth::logout();
+        return redirect('/csgo'); // redirect to Steam login page
     }
 }

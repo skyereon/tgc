@@ -34,9 +34,9 @@ canvas {
 
 .game-login {
     position: absolute;
-    top: 30px;
-    left:40px;
-    z-index: 12;
+    top: 0px;
+    right:0px;
+    z-index: 14;
     background-color: #f6fffa;
 }
 

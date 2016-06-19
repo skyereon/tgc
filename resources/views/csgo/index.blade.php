@@ -5,11 +5,12 @@
 
 @section('auth-steam')
     <div class="game-login">
+
         @if(Auth::check())
             <img src="{{ Auth::user()->avatar }}">
             <p>{{ Auth::user()->username }}</p>
             <p>{{ Auth::user()->steamid }}</p>
-            <p><a href="logout">LOGOUT</a></p>
+            <p><a href="csgologout">LOGOUT</a></p>
         @else
             <p><a href="steamlogin">Login into Steam</a></p>
         @endif
@@ -49,45 +50,18 @@ class=""
         <title>The Game Club</title>
 
         <link rel="stylesheet" type="text/css" media="screen, print, projection" href="/css/csgo.css">
-        <link rel="stylesheet" type="text/css" href="/css/demo.css" />
-        <link rel="stylesheet" type="text/css" href="/css/cs-select.css" />
-
+        <link rel="stylesheet" type="text/css" href="/css/css-menu.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     </head>
     <body>
 
-    <div id="page-homepage">
-        {{--@yield('auth-steam');--}}
-        {{--<div class="game-login">--}}
-            {{--@if(Auth::check())--}}
-                {{--<img src="{{ Auth::user()->avatar }}">--}}
-                {{--<p>{{ Auth::user()->username }}</p>--}}
-                {{--<p>{{ Auth::user()->steamid }}</p>--}}
-                {{--<p><a href="logout">LOGOUT</a></p>--}}
-            {{--@else--}}
-                {{--<p><a href="steamlogin">Login into Steam</a></p>--}}
-            {{--@endif--}}
-        {{--</div>--}}
 
-        <section class="game-select">
-            <select class="cs-select cs-skin-elastic">
-                <option value="" disabled selected>Выберите игру</option>
-                <option value="france" data-class="flag-france">CS:GO</option>
-                <option value="brazil" data-class="flag-brazil">Dota 2</option>
-                <option value="argentina" data-class="flag-argentina">LoL</option>
-                <option value="south-africa" data-class="flag-safrica">Hearthstone</option>
-            </select>
-        </section>
-        <script src="/js/classie.js"></script>
-        <script src="/js/selectFx.js"></script>
-        <script>
-            (function() {
-                [].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {
-                    new SelectFx(el);
-                } );
-            })();
-        </script>
+
+    <div id="page-homepage">
+
 
         <div class="navbar-wrapper">
 
@@ -117,10 +91,19 @@ class=""
                 </ul>
 
             </div>
+            {{--<div class="game-login">--}}
+                {{--@if(Auth::check())--}}
+                    {{--<img src="{{ Auth::user()->avatar }}">--}}
+                    {{--<p>{{ Auth::user()->username }}</p>--}}
+                    {{--<p>{{ Auth::user()->steamid }}</p>--}}
+                    {{--<p><a href="csgologout">LOGOUT</a></p>--}}
+                {{--@else--}}
+                    {{--<p><a href="steamlogin">Login into Steam</a></p>--}}
+                {{--@endif--}}
+            {{--</div>--}}
+            @yield('auth-steam');
 
         </div>
-
-
 
         <main>
 
