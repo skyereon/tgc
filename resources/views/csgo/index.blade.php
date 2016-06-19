@@ -3,16 +3,18 @@
 
 @endsection
 
-@section('auth-steam')
+@section('auth')
     <div class="game-login">
 
         @if(Auth::check())
-            <img src="{{ Auth::user()->avatar }}">
-            <p>{{ Auth::user()->username }}</p>
-            <p>{{ Auth::user()->steamid }}</p>
-            <p><a href="csgologout">LOGOUT</a></p>
+            <a href="csgo/profile"><img src="{{ Auth::user()->avatar }}"></a>
+            <p>Вы вошли как:<br/>
+                <a class="profile" href="csgo/profile"> {{ Auth::user()->username }} </a></p>
+            {{--<h4>{{ Auth::user()->username }}</h4>--}}
+            {{--<h3>{{ Auth::user()->steamid }}</h3>--}}
+            <p><a class="btn btn-default" href="csgologout" role="button">Выйти</a></p>
         @else
-            <p><a href="steamlogin">Login into Steam</a></p>
+            <a href="csgosteamlogin"><img src="img/csgo/steam-signin-color.png" alt="Зайти через стим!"></a>
         @endif
     </div>
 @endsection
@@ -48,7 +50,7 @@ class=""
         <link rel="icon" href="/i/favicon.png">
 
         <title>The Game Club</title>
-
+        <link rel="stylesheet" type="text/css" href="/bootstrap-3.3.6-dist/css/bootstrap.css" />
         <link rel="stylesheet" type="text/css" media="screen, print, projection" href="/css/csgo.css">
         <link rel="stylesheet" type="text/css" href="/css/css-menu.css" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
@@ -101,14 +103,13 @@ class=""
                     {{--<p><a href="steamlogin">Login into Steam</a></p>--}}
                 {{--@endif--}}
             {{--</div>--}}
-            @yield('auth-steam');
+            @yield('auth');
 
         </div>
 
         <main>
 
             <div class="first">
-
                 {{--<img src="/i/logo.png" alt="Site Logo" class="vertical">--}}
 
             </div>
