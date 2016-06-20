@@ -2,12 +2,10 @@ html {
     font-family: sans-serif;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
-    min-width: 1000px;
 }
 
 body {
     margin: 0;
-    min-width: 1000px;
 }
 
 
@@ -226,6 +224,127 @@ body {
     height: 100%;
 }
 
+.nav-bar-bg{
+    left: 0px;
+    right: 0px;
+    min-width: 800px;
+    margin-left: 20%!important;
+    margin-right: 20%!important;
+    color: rgba(255, 255, 255, 1);
+    position: absolute;
+    z-index: 14;
+    border-radius: 0px 0px 10px 10px;
+    background-color: rgba(76, 76, 76, 0.55);
+    border: 1px solid #343434;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.main-container{
+    left: 0px;
+    right: 0px;
+    margin-top: 100px;
+    /*padding-top: 50px;*/
+    /*height: 30px;*/
+    min-width: 800px;
+    margin-left: 20%!important;
+    margin-right: 20%!important;
+    color: rgba(255, 255, 255, 1);
+    position: absolute;
+    z-index: 14;
+    border-radius: 10px 10px 10px 10px;
+    background-color: rgba(76, 76, 76, 0.55);
+    border: 1px solid #343434;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.main-container .sec-container{
+    left: 0px;
+    right: 0px;
+    margin: 20px 10px;
+    min-width: 780px;
+    color: rgba(255, 255, 255, 1);
+    position: relative;
+    z-index: 14;
+    border-radius: 4px 4px 4px 4px;
+    background-color: rgba(109, 109, 109, 0.55);
+    border: 1px solid #343434;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.main-container .sec-container .article{
+    left: 0px;
+    right: 0px;
+    min-width: 780px;
+    color: rgba(255, 255, 255, 1);
+    position: inherit;
+    z-index: 14;
+    border-radius: 4px 4px 0px 0px;
+    background-color: rgba(45, 42, 49, 0.65);
+    border: 1px solid #343434;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    text-align: left;
+    padding: 20px;
+}
+
+.main-container .sec-container .article p{
+    display: inline-block;
+}
+
+
+
+.main-container .sec-container .article .right-align-element{
+    vertical-align: middle;
+    float: right;
+}
+
+.main-container .sec-container .article p{
+    margin-bottom: 0px;
+}
+
+
+.main-container .sec-container .sec-container-text{
+    left: 0px;
+    right: 0px;
+    min-width: 780px;
+    color: rgba(255, 255, 255, 1);
+    position: relative;
+    z-index: 14;
+    border-radius: 0px 0px 4px 4px;
+    background-color: rgba(105, 100, 104, 0.65);
+    border: 1px solid #343434;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    text-align: left;
+    padding: 20px 10px 10px 10px;
+
+}
+
+.main-footer{
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-top: 100px;
+    /*padding: 5px;*/
+    padding-top: 5px;
+    /*height: 20px;*/
+    min-width: 800px;
+    margin-left: 20%!important;
+    margin-right: 20%!important;
+    color: rgba(255, 255, 255, 1);
+    position: absolute;
+    z-index: 14;
+    border-radius: 10px 10px 0px 0px;
+    background-color: rgba(76, 76, 76, 0.55);
+    border: 1px solid #343434;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.main-footer label{
+    margin: 0px;
+}
+
+.game-list{
+
+}
 
 .vertical {
     position: relative;
@@ -310,7 +429,7 @@ li {
 
 #main-nav {
     display: inline-block;
-    margin: 20px 0;
+    margin: 3px 0;
 }
 
 #main-nav li {

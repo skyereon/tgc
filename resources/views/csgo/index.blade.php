@@ -89,11 +89,7 @@ class=""
             @yield('game-select')
 
             <div class="navbar-collapse collapse">
-
-                <div class="logo-wrapper">
-                    <img src="/i/logo.png" id="v7-logo" class="vertical">
-                </div>
-
+                <div class="nav-bar-bg">
                 <ul id="main-nav">
                     <li @yield('home')>
                         <a href="@yield('play');" class="mobile-vertical">Играть</a>
@@ -112,6 +108,7 @@ class=""
                     </li>
 
                 </ul>
+                </div>
 
             </div>
             @yield('auth-steam');
@@ -119,7 +116,6 @@ class=""
         </div>
 
         <main>
-
             <div class="first">
 
             </div>
@@ -128,8 +124,29 @@ class=""
                 <div class="current-game">CS:GO</div>
                 @yield('in_process')
             </div>
+            <div class="main-container">
+                <div class="sec-container">
+                    <div class="article">
+                        <h3>Список открытых комнат:</h3>
+                        <a class=" right-align-element btn btn-default" href="createroom" role="button">Создать комнату</a>
+                    </div>
+                    <div class="sec-container-text">
 
-            <div id="particles" style="display: block;"><canvas class="pg-canvas" width="260" height="643"></canvas></div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-footer">
+                <label>Copyright © 2016 - The Game Club. All rights reserved.</label>
+            </div>
+
+
+            <div id="particles" style="display: block;">
+                <canvas class="pg-canvas" width="260" height="643">
+
+                </canvas>
+            </div>
 
         </main>
 
