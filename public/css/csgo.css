@@ -16,9 +16,20 @@ body {
     width: 20%;
 }
 
+/*.description {*/
+/*padding-top:10px;*/
+/*font-size: 16px;*/
+/*color: #dbdbff;*/
+/*}*/
+
+canvas {
+    display: inline-block;
+    vertical-align: baseline;
+}
 
 /* Game select menu */
 .menu {
+
     color: rgba(255, 255, 255, 1);
     padding: 7px 7px 7px 8px;
     position: absolute;
@@ -91,9 +102,7 @@ body {
 }
 
 .wrap-drop .drop li a:hover {
-
     border-radius: 5px 5px 10px 10px;
-
 }
 
 
@@ -126,19 +135,6 @@ body {
 
 /* Endsection */
 
-
-
-/*.description {*/
-/*padding-top:10px;*/
-/*font-size: 16px;*/
-/*color: #dbdbff;*/
-/*}*/
-
-canvas {
-    display: inline-block;
-    vertical-align: baseline;
-}
-
 .current-game {
     color: white;
     font-size: 60px;
@@ -158,7 +154,7 @@ canvas {
 }
 
 .game-login .profile{
-    color: #2B99BB;
+    color: #2aabd2;
 }
 
 .game-login img{
@@ -262,7 +258,7 @@ button,
     font-weight: bold;
     letter-spacing: 0.1em;
     font-size: 12px;
-    border: 2px solid #2B99BB;
+    border: 2px solid #fe6a6a;
     color: #ffffff;
     padding: 2em 3em;
     line-height: 1em;
@@ -271,7 +267,7 @@ button,
 
 button:hover,
 .button:hover {
-    background: #2B99BB;
+    background: #fe6a6a;
     color: #ffffff;
     text-decoration: none;
 }
@@ -385,7 +381,7 @@ li {
     bottom: 0px;
     left: 0;
     width: 60px;
-    border-bottom: 1px solid #2B99BB;
+    border-bottom: 1px solid #0286e3;
     line-height: 0;
     margin-left: 20px;
 }
@@ -393,7 +389,7 @@ li {
 #main-nav #magic-line .triangle {
     display: inline-block;
     border: 4px solid transparent;
-    border-bottom-color: #2B99BB;
+    border-bottom-color: #0286e3;
     position: relative;
     bottom: 5px;
 }
@@ -404,6 +400,7 @@ li {
     position: absolute;
     width: 100%;
     height: 100%;
+    min-width: 1000px;
 }
 
 #page-homepage main {
@@ -491,3 +488,11 @@ li {
     width: 100px;
     padding: 0;
 }
+
+
+
+
+
+
+
+
