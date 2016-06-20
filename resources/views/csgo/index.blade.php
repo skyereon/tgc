@@ -7,10 +7,12 @@
     <div class="game-login">
 
         @if(Auth::check())
-            <img src="{{ Auth::user()->avatar }}">
-            <p>{{ Auth::user()->username }}</p>
-            <p>{{ Auth::user()->steamid }}</p>
-            <p><a href="csgologout">LOGOUT</a></p>
+            <a href="csgo/profile"><img src="{{ Auth::user()->avatar }}"></a>
+            <p>Вы вошли как:<br/>
+                <a class="profile" href="csgo/profile"> {{ Auth::user()->username }} </a></p>
+            {{--<h4>{{ Auth::user()->username }}</h4>--}}
+            {{--<h3>{{ Auth::user()->steamid }}</h3>--}}
+            <p><a class="btn btn-default" href="csgologout" role="button">Выйти</a></p>
         @else
             <a href="csgosteamlogin"><img src="img/csgo/steam-signin-color.png" alt="Зайти через стим!"></a>
         @endif
@@ -67,7 +69,7 @@ class=""
         <link rel="icon" href="/i/favicon.png">
 
         <title>The Game Club</title>
-
+        <link rel="stylesheet" type="text/css"  href="/bootstrap-3.3.6-dist/css/bootstrap.css">
         <link rel="stylesheet" type="text/css" media="screen, print, projection" href="/css/csgo.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <script type="text/javascript" src="/js/jquery-3.0.0.min.js"></script>
@@ -92,346 +94,50 @@ class=""
                     <img src="/i/logo.png" id="v7-logo" class="vertical">
                 </div>
 
-              <div class="nav-wrap">
-                  <ul id="main-nav">
-                      <li @yield('home')>
-                          <a href="@yield('play');" class="mobile-vertical">Играть</a>
-                      </li>
+                <ul id="main-nav">
+                    <li @yield('home')>
+                        <a href="@yield('play');" class="mobile-vertical">Играть</a>
+                    </li>
 
-                      <li @yield('cs')>
-                          <a href="@yield('tournaments');" class="mobile-vertical">Турниры</a>
-                      </li>
+                    <li @yield('cs')>
+                        <a href="@yield('tournaments');" class="mobile-vertical">Турниры</a>
+                    </li>
 
-                      <li @yield('dota')>
-                          <a href="@yield('complaints');" class="mobile-vertical">Жалобы</a>
-                      </li>
+                    <li @yield('dota')>
+                        <a href="@yield('complaints');" class="mobile-vertical">Жалобы</a>
+                    </li>
 
-                      <li @yield('lol')>
-                          <a href="@yield('faq');" class="mobile-vertical">FAQ</a>
-                      </li>
+                    <li @yield('lol')>
+                        <a href="@yield('faq');" class="mobile-vertical">FAQ</a>
+                    </li>
 
-                  </ul>
-              </div>
-
+                </ul>
 
             </div>
-            {{--<div class="game-login">--}}
-                {{--@if(Auth::check())--}}
-                    {{--<img src="{{ Auth::user()->avatar }}">--}}
-                    {{--<p>{{ Auth::user()->username }}</p>--}}
-                    {{--<p>{{ Auth::user()->steamid }}</p>--}}
-                    {{--<p><a href="csgologout">LOGOUT</a></p>--}}
-                {{--@else--}}
-                    {{--<p><a href="steamlogin">Login into Steam</a></p>--}}
-                {{--@endif--}}
-            {{--</div>--}}
             @yield('auth-steam');
 
         </div>
 
         <main>
 
-            {{--<div class="first">--}}
-                {{--<img src="/i/logo.png" alt="Site Logo" class="vertical">--}}
+            <div class="first">
 
-            {{--</div>--}}
+            </div>
 
-            {{--<div class="wrapper">--}}
-                {{--<div class="current-game">CS:GO</div>--}}
-                {{--@yield('in_process')--}}
-            {{--</div>--}}
+            <div class="wrapper">
+                <div class="current-game">CS:GO</div>
+                @yield('in_process')
+            </div>
 
-            {{--<div class="game-content">--}}
-                {{--<div class="game-connect">--}}
-                    {{--<table >--}}
-                        {{--<tbody>--}}
-                        {{--<tr>--}}
-                            {{--<td>--}}
-                                {{--<p>Игры</p>--}}
-                            {{--</td>--}}
-
-                            {{--<td>228</td>--}}
-
-                            {{--<td>lorem</td>--}}
-
-                            {{--<td>ispum</td>--}}
-
-                            {{--<td>test</td>--}}
-                        {{--</tr>--}}
-
-                        {{--<tr>--}}
-                            {{--<td>Домас</td>--}}
-
-                            {{--<td>228</td>--}}
-
-                            {{--<td>lorem</td>--}}
-
-                            {{--<td>ispum</td>--}}
-
-                            {{--<td>test</td>--}}
-                        {{--</tr>--}}
-
-                        {{--<tr>--}}
-                            {{--<td>--}}
-                                {{--<p>Домас</p>--}}
-                            {{--</td>--}}
-
-                            {{--<td>--}}
-                                {{--<p>228</p>--}}
-                            {{--</td>--}}
-
-                            {{--<td>lorem</td>--}}
-
-                            {{--<td>ispum</td>--}}
-
-                            {{--<td>test</td>--}}
-                        {{--</tr>--}}
-
-                        {{--<tr>--}}
-                            {{--<td>--}}
-                                {{--<p>Домас</p>--}}
-                            {{--</td>--}}
-
-                            {{--<td>228</td>--}}
-
-                            {{--<td>lorem</td>--}}
-
-                            {{--<td>ispum</td>--}}
-
-                            {{--<td>test</td>--}}
-                        {{--</tr>--}}
-
-                        {{--<tr>--}}
-                            {{--<td>--}}
-                                {{--<p>Домас</p>--}}
-                            {{--</td>--}}
-
-                            {{--<td>228</td>--}}
-
-                            {{--<td>lorem</td>--}}
-
-                            {{--<td>ispum</td>--}}
-
-                            {{--<td>test</td>--}}
-                        {{--</tr>--}}
-                        {{--</tbody>--}}
-                    {{--</table>--}}
-                {{--</div>--}}
-                {{--<ul class="content-wrap">--}}
-                    {{--<li>--}}
-                        {{--<div class="top-gamers">--}}
-                            {{--<table >--}}
-                                {{--<tbody>--}}
-                                {{--<tr>--}}
-                                    {{--<td>--}}
-                                        {{--<p>Игроки</p>--}}
-                                    {{--</td>--}}
-
-                                    {{--<td>228</td>--}}
-
-                                    {{--<td>lorem</td>--}}
-
-                                    {{--<td>ispum</td>--}}
-
-                                    {{--<td>test</td>--}}
-                                {{--</tr>--}}
-
-                                {{--<tr>--}}
-                                    {{--<td>Домас</td>--}}
-
-                                    {{--<td>228</td>--}}
-
-                                    {{--<td>lorem</td>--}}
-
-                                    {{--<td>ispum</td>--}}
-
-                                    {{--<td>test</td>--}}
-                                {{--</tr>--}}
-
-                                {{--<tr>--}}
-                                    {{--<td>--}}
-                                        {{--<p>Домас</p>--}}
-                                    {{--</td>--}}
-
-                                    {{--<td>--}}
-                                        {{--<p>228</p>--}}
-                                    {{--</td>--}}
-
-                                    {{--<td>lorem</td>--}}
-
-                                    {{--<td>ispum</td>--}}
-
-                                    {{--<td>test</td>--}}
-                                {{--</tr>--}}
-
-                                {{--<tr>--}}
-                                    {{--<td>Домас</td>--}}
-
-                                    {{--<td>228</td>--}}
-
-                                    {{--<td>lorem</td>--}}
-
-                                    {{--<td>ispum</td>--}}
-
-                                    {{--<td>test</td>--}}
-                                {{--</tr>--}}
-
-                                {{--<tr>--}}
-                                    {{--<td>--}}
-                                        {{--<p>Домас</p>--}}
-                                    {{--</td>--}}
-
-                                    {{--<td>--}}
-                                        {{--<p>228</p>--}}
-                                    {{--</td>--}}
-
-                                    {{--<td>lorem</td>--}}
-
-                                    {{--<td>ispum</td>--}}
-
-                                    {{--<td>test</td>--}}
-                                {{--</tr>--}}
-
-                                {{--<tr>--}}
-                                    {{--<td>--}}
-                                        {{--<p>Домас</p>--}}
-                                    {{--</td>--}}
-
-                                    {{--<td>228</td>--}}
-
-                                    {{--<td>lorem</td>--}}
-
-                                    {{--<td>ispum</td>--}}
-
-                                    {{--<td>test</td>--}}
-                                {{--</tr>--}}
-
-                                {{--<tr>--}}
-                                    {{--<td>--}}
-                                        {{--<p>Домас</p>--}}
-                                    {{--</td>--}}
-
-                                    {{--<td>228</td>--}}
-
-                                    {{--<td>lorem</td>--}}
-
-                                    {{--<td>ispum</td>--}}
-
-                                    {{--<td>test</td>--}}
-                                {{--</tr>--}}
-
-                                {{--<tr>--}}
-                                    {{--<td>Домас</td>--}}
-
-                                    {{--<td>228</td>--}}
-
-                                    {{--<td>lorem</td>--}}
-
-                                    {{--<td>ispum</td>--}}
-
-                                    {{--<td>test</td>--}}
-                                {{--</tr>--}}
-
-                                {{--<tr>--}}
-                                    {{--<td>--}}
-                                        {{--<p>Домас</p>--}}
-                                    {{--</td>--}}
-
-                                    {{--<td>--}}
-                                        {{--<p>228</p>--}}
-                                    {{--</td>--}}
-
-                                    {{--<td>lorem</td>--}}
-
-                                    {{--<td>ispum</td>--}}
-
-                                    {{--<td>test</td>--}}
-                                {{--</tr>--}}
-
-                                {{--<tr>--}}
-                                    {{--<td>Домас</td>--}}
-
-                                    {{--<td>228</td>--}}
-
-                                    {{--<td>lorem</td>--}}
-
-                                    {{--<td>ispum</td>--}}
-
-                                    {{--<td>test</td>--}}
-                                {{--</tr>--}}
-
-                                {{--<tr>--}}
-                                    {{--<td>--}}
-                                        {{--<p>Домас</p>--}}
-                                    {{--</td>--}}
-
-                                    {{--<td>--}}
-                                        {{--<p>228</p>--}}
-                                    {{--</td>--}}
-
-                                    {{--<td>lorem</td>--}}
-
-                                    {{--<td>ispum</td>--}}
-
-                                    {{--<td>test</td>--}}
-                                {{--</tr>--}}
-
-                                {{--<tr>--}}
-                                    {{--<td>--}}
-                                        {{--<p>Домас</p>--}}
-                                    {{--</td>--}}
-
-                                    {{--<td>--}}
-                                        {{--<p>228</p>--}}
-                                    {{--</td>--}}
-
-                                    {{--<td>lorem</td>--}}
-
-                                    {{--<td>ispum</td>--}}
-
-                                    {{--<td>test</td>--}}
-                                {{--</tr>--}}
-
-                                {{--<tr>--}}
-                                    {{--<td>--}}
-                                        {{--<p>Домас</p>--}}
-                                    {{--</td>--}}
-
-                                    {{--<td>--}}
-                                        {{--<p>228</p>--}}
-                                    {{--</td>--}}
-
-                                    {{--<td>lorem</td>--}}
-
-                                    {{--<td>ispum</td>--}}
-
-                                    {{--<td>test</td>--}}
-                                {{--</tr>--}}
-
-                                {{--</tbody>--}}
-                            {{--</table>--}}
-                        {{--</div>--}}
-                    {{--</li>--}}
-                    {{--<li class="sub-list">--}}
-                        {{--<div class="market">--}}
-
-                        {{--</div>--}}
-                        {{--<div class="vk">--}}
-
-                        {{--</div>--}}
-                    {{--</li>--}}
-                {{--</ul>--}}
-            {{--</div>--}}
-
-            {{--<div id="particles" style="display: block;"><canvas class="pg-canvas" width="260" height="643"></canvas></div>--}}
+            <div id="particles" style="display: block;"><canvas class="pg-canvas" width="260" height="643"></canvas></div>
 
         </main>
 
-        {{--<table class="test" width="100%">--}}
-            {{--<tbody>--}}
+        <table class="test" width="100%">
+            <tbody>
 
-            {{--</tbody>--}}
-        {{--</table>--}}
+            </tbody>
+        </table>
 
     </div>
 
@@ -443,7 +149,7 @@ class=""
     <script>
         $(document).ready(function() {
             $('#particles').particleground({
-                dotColor: '#0286e3',
+                dotColor: '#2B99BB',
                 lineColor: 'rgba(255,255,255,0.05)',
                 particleRadius: 3,
                 parallax: false,
