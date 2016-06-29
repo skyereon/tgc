@@ -287,8 +287,9 @@
 
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
 <script type="text/javascript" src="/js/jquery.particleground.js"></script>
 <script type="text/javascript" src="/js/magicline.js"></script>
 

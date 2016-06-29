@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Invisnik\LaravelSteamAuth\SteamAuth;
 use App\User;
 use Auth;
+use DB;
 
 class AuthController extends Controller
 {
@@ -33,14 +34,17 @@ class AuthController extends Controller
 
                 }
                 Auth::login($user, true);
+                DB::insert('insert into player_state values (NULL,?,0,0)',[Auth::user()->id]);
                 return redirect('/csgo'); // redirect to site
             }
         }
+
         return $this->steam->redirect(); // redirect to Steam login page
     }
 
     public function logoutcsgo()
     {
+        DB::delete('delete from player_state where player_id = ? limit 1',[Auth::user()->id]);
         Auth::logout();
         return redirect('/csgo'); // redirect to Steam login page
     }

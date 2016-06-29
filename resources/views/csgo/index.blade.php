@@ -10,6 +10,7 @@
             <a href="csgo/profile"><img src="{{ Auth::user()->avatar }}"></a>
             <p>Вы вошли как:<br/>
                 <a class="profile" href="csgo/profile"> {{ Auth::user()->username }} </a></p>
+                <p><a class="profile" href="csgo/profile"> {{ Auth::user()->cash }} RUB</a></p>
             {{--<h4>{{ Auth::user()->username }}</h4>--}}
             {{--<h3>{{ Auth::user()->steamid }}</h3>--}}
             <p><a class="btn btn-default" href="csgologout" role="button">Выйти</a></p>
@@ -76,7 +77,7 @@ class=""
         <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
     </head>
-    <body>
+    <body onload="init()">
 
 
 
@@ -91,20 +92,26 @@ class=""
             <div class="navbar-collapse collapse">
                 <div class="nav-bar-bg">
                 <ul id="main-nav">
+                    <li>
+                        <a href="/" class="mobile-vertical">Intro</a>
+                    </li>
                     <li @yield('home')>
-                        <a href="@yield('play');" class="mobile-vertical">Играть</a>
+                        <a href="#" class="mobile-vertical">Играть</a>
                     </li>
 
-                    <li @yield('cs')>
-                        <a href="@yield('tournaments');" class="mobile-vertical">Турниры</a>
+                    <li>
+                        <a href="/csgo/tournaments" class="mobile-vertical">Турниры</a>
                     </li>
 
-                    <li @yield('dota')>
-                        <a href="@yield('complaints');" class="mobile-vertical">Жалобы</a>
+                    <li>
+                        <a href="/csgo/reports" class="mobile-vertical">Жалобы</a>
                     </li>
 
-                    <li @yield('lol')>
-                        <a href="@yield('faq');" class="mobile-vertical">FAQ</a>
+                    <li>
+                        <a href="/csgo/faq" class="mobile-vertical">FAQ</a>
+                    </li>
+                    <li>
+                        <a href="/csgo/profile" class="mobile-vertical">Профиль</a>
                     </li>
 
                 </ul>
@@ -127,12 +134,72 @@ class=""
             <div class="main-container">
                 <div class="sec-container">
                     <div class="article">
-                        <h3>Список открытых комнат:</h3>
-                        <a class=" right-align-element btn btn-default" href="createroom" role="button">Создать комнату</a>
+                        <h3>Cписок открытых игр:</h3>
+                        <p class="right-align-element"><a class=" btn btn-default" href="/csgo/createroom" role="button">Создать комнату</a></p>
                     </div>
-                    <div class="sec-container-text">
+                    <div id="containerGames" class="sec-container-text">
+                        <table id="listGames" class="table table-hover">
+                            <thead>
+                            <th>#</th>
+                            <th>Игра</th>
+                            <th>Время</th>
+                            <th>Тип</th>
+                            <th>Карта</th>
+                            <th>Игроков</th>
+                            <th>Ставка</th>
+                            </thead>
 
+                        </table>
+                        <div class="right-align-element-div">
+                            <button type="button" class=" btn btn-success" id="getGames">Обновить</button>
+                        </div>
+                    </div>
+                </div>
 
+                <div class="sec-container">
+                    <div class="article">
+                        <h3>Список идущих игр:</h3>
+                        {{--<p class="right-align-element"><a class=" btn btn-default" href="/csgo/createroom" role="button">Создать комнату</a></p>--}}
+                    </div>
+                    <div id="containerGamesPlaying" class="sec-container-text">
+                        <table id="listGamesPlaying" class="table table-hover">
+                            <thead>
+                            <th>#</th>
+                            <th>Игра</th>
+                            <th>Время</th>
+                            <th>Тип</th>
+                            <th>Карта</th>
+                            <th>Игроков</th>
+                            <th>Смотреть</th>
+                            </thead>
+                        </table>
+                        <div class="right-align-element-div">
+                            <button type="button" class=" btn btn-success" id="getGamesPlaying">Обновить</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sec-container">
+                    <div class="article">
+                        <h3>Список последних завершенных игр:</h3>
+                        {{--<p class="right-align-element"><a class=" btn btn-default" href="/csgo/createroom" role="button">Создать комнату</a></p>--}}
+                    </div>
+                    <div id="containerGamesPlayed" class="sec-container-text">
+                        <table id="listGamesPlayed" class="table table-hover">
+                            <thead>
+                            <th>#</th>
+                            <th>Игра</th>
+                            <th>Время</th>
+                            <th>Тип</th>
+                            <th>Карта</th>
+                            <th>Игроков</th>
+                            <th>Победитель</th>
+                            </thead>
+
+                        </table>
+                        <div class="right-align-element-div">
+                            <button type="button" class=" btn btn-success" id="getGamesPlayed">Обновить</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -158,8 +225,105 @@ class=""
 
     </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
+    <script type="text/javascript">
+         function init() {
+         $.get('getGames',function (data) {
+             var table = document.getElementById('listGames');
+             while(table.childNodes[0]){
+                 table.removeChild(table.childNodes[0]);
+             }
+             $('#listGames').append(data);
+         })
 
+             $.get('getGamesPlaying',function (data) {
+                 var table = document.getElementById('listGamesPlaying');
+                 while(table.childNodes[0]){
+                     table.removeChild(table.childNodes[0]);
+                 }
+                 $('#listGamesPlaying').append(data);
+             })
+
+             $.get('getGamesPlayed',function (data) {
+                 var table = document.getElementById('listGamesPlayed');
+                 while(table.childNodes[0]){
+                     table.removeChild(table.childNodes[0]);
+                 }
+                 $('#listGamesPlayed').append(data);
+             })
+     }
+
+
+     $(document).ready(function () {
+         $('#getGames').click(function(){
+             $.get('getGames',function (data) {
+                 var table = document.getElementById('listGames');
+                 while(table.childNodes[0]){
+                     table.removeChild(table.childNodes[0]);
+                 }
+                 $('#listGames').append(data);
+             })
+         })
+     })
+
+         $(document).ready(function () {
+             $('#getGamesPlaying').click(function(){
+                 $.get('getGamesPlaying',function (data) {
+                     var table = document.getElementById('listGamesPlaying');
+                     while(table.childNodes[0]){
+                         table.removeChild(table.childNodes[0]);
+                     }
+                     $('#listGamesPlaying').append(data);
+                 })
+             })
+         })
+
+         $(document).ready(function () {
+             $('#getGamesPlayed').click(function(){
+                 $.get('getGamesPlayed',function (data) {
+                     var table = document.getElementById('listGamesPlayed');
+                     while(table.childNodes[0]){
+                         table.removeChild(table.childNodes[0]);
+                     }
+                     $('#listGamesPlayed').append(data);
+                 })
+             })
+         })
+    </script>
+
+    {{--<script>--}}
+        {{--// ЭТО ТО ЧТО МЫ ОБРАБАТЫВАЕМ Т.Е РЕЗУЛЬТАТ ОТВЕТА СЕРВЕРА СМОТРИМ Файл Result.PHP--}}
+        {{--function showContent(link) {--}}
+            {{--var cont = document.getElementById('contentBody');--}}
+            {{--var loading = document.getElementById('loading');--}}
+            {{--//cont.innerHTML = loading.innerHTML;--}}
+            {{--var http = createRequestObject();				// создаем ajax-объект--}}
+            {{--if( http ) {--}}
+                {{--http.open('get', link);					// инициируем загрузку страницы--}}
+                {{--http.onreadystatechange = function () {			// назначаем асинхронный обработчик события--}}
+                    {{--if(http.readyState == 4) {--}}
+                        {{--cont.innerHTML = http.responseText;	// присваиваем содержимое--}}
+                    {{--}--}}
+                {{--}--}}
+                {{--http.send(null);--}}
+            {{--} else {--}}
+                {{--document.location = link;	// если ajax-объект не удается создать, просто перенаправляем на адрес--}}
+            {{--}--}}
+        {{--}--}}
+
+        {{--// создание ajax объекта--}}
+        {{--function createRequestObject() {--}}
+            {{--try { return new XMLHttpRequest() }--}}
+            {{--catch(e) {--}}
+                {{--try { return new ActiveXObject('Msxml2.XMLHTTP') }--}}
+                {{--catch(e) {--}}
+                    {{--try { return new ActiveXObject('Microsoft.XMLHTTP') }--}}
+                    {{--catch(e) { return null; }--}}
+                {{--}--}}
+            {{--}--}}
+        {{--}--}}
+    {{--</script>--}}
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.js"></script>
     <script type="text/javascript" src="/js/jquery.particleground.js"></script>
     <script type="text/javascript" src="/js/magicline.js"></script>
 
